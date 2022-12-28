@@ -1,0 +1,114 @@
+# Expressions
+
+- Embed: `embed './data.bin':ByteArray` and `embed './data.txt':String`
+- Await (`await givenPromise`, implicitly causes surrounding function to be asynchronous and return a `Promise`)
+- Await can be used in the top-level program.
+- Yield (`yield v`, implictily causes surrounding function to be a generator and return a `Generator`)
+- Default: `default(T)` returns default value of type `T`
+- `import.meta` returns information about a script file; returns `{url: fileURL}`.
+- Function
+  - `a -> ...`
+  - `(...) -> ...`
+  - `(...) -> throws Error ...`
+  - `function() {}`
+  - `function() 10`
+  - `function name() 10`
+  - `function() throws Error {}`
+- XML-like node initializer
+  - `<C></C>` can initialize class _**without**_ constructor that implements `INodeContainer`.
+  - `<N/>` can initialize class _**without**_ constructor (including across inheritance).
+  - Spreads (`<>{anotherArrayOfNodes}</>`)
+  - Unlike XML, attributes do not have namespace
+  - Lexical structure supports XML-like comments (`<!-- comment -->`).
+  - `<N attrib=primaryExpr trueCheckedAttrib k={v}/>`
+  - `<com.foo.C/>`
+  - `<someNS:N/>` (equivalent to `<someNS.N/>`)
+  - `<></>` (can initialize array of nodes)
+- Object initializer
+  - Shorthand notation
+  - Trailling comma
+  - `{ ...spread1, x, ...spread2 }`
+  - Can initialize (1) `Map`, flags `enum`s and records.
+  - Can initialize (2) class _**without**_ constructor (including across inheritance), _**without**_ inherited fields.
+  - Can be followed by a type annotation.
+- Array initializer
+  - `[ 'blah', ...spread1, ...spread2, 'bleh', ]`
+  - Can contain ellisions (aka. holes).
+  - Can initialize `Array`, `Set`, flags `enum`s and tuples.
+  - Can be followed by a type annotation.
+  - Spread
+    - Works with Array spread object.
+    - Works with Iterator spread object.
+- Optional member: `o?.x` (keyword allowed)
+  - Tests for both `undefined` and `null`
+- Optional index: `o?.[k]`
+  - Tests for both `undefined` and `null`
+- Optional call: `f?.(...)`
+  - Tests for both `undefined` and `null`
+- Member: `o.x` (keyword allowed)
+  - If `o` is a package, then `x` can refer to a subpackage.
+- Index: `o[k]`
+  - Indentation-aware; index happens either inline or in next line, with higher indentation.
+- Call: `f()`
+  - Indentation-aware; call happens either inline or in next line, with higher indentation.
+- `C(...)`, where C is a type, is equivalent to `new C(...)`
+- `E(numOrStr)`, where E is an enum type, is equivalent to `numOrStr as! E`
+- `N(num)`, where N is a numeric type and `num` is a value of a numeric type, is equivalent to `num as! N`
+- `Id`
+- `Id:T`
+- `/zxc/i` (`RegExp literal`)
+- `this` (this literal)
+- `'string'` (string literal)
+- `null` (null literal)
+- `false` (boolean literal)
+- `0` (numeric literal)
+- `c ? x : y` (conditional expression)
+- `v as T` or `v as? T` (optional type conversion)
+- `v as! T` (strict type conversion)
+- `v instanceof T`
+- `v is T`
+- `o1 is o2:T` (binds `o2` into a new frame)
+- `(v)` (parentheses expression)
+- `x, y` (list expression)
+- `tOrFunction.<...>` (generic instantiation)
+- `delete r` (delete operator)
+- `typeof v`
+- `void v` (void operator)
+- `!v`
+- `+v`
+- `-v`
+- `~v`
+- `x + y`
+- `x - y`
+- `x * y`
+- `x / y`
+- `x % y`
+- `x ** y`
+- `x && y`
+- `x ^^ y`
+- `x || y`
+- `x ?? y` (null coalescing, works both with `null` and `undefined`)
+- `x & y`
+- `x ^ y`
+- `x | y`
+- `x << y`
+- `x >> y`
+- `x >>> y`
+- `x == y`
+- `x != y`
+- `x === y`
+- `x !== y`
+- `x < y`
+- `x > y`
+- `x <= y`
+- `x >= y`
+- `o!` (non-null, works with both `undefined` and `null`)
+- `++x`
+- `--x`
+- `x++`
+- `x--`
+- `nonDestructuringPattern = y`
+- `destructuringPattern = y`
+- `nonDestructuringPattern [compoundAssignment]= y`
+- `new C`
+- `super.xOrF`
