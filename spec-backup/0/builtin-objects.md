@@ -48,8 +48,8 @@ Uncategorized:
   - Read-only `firstChar:String` - returns first code point into string
   - Read-only `lastChar:String` - returns last code point into string (fast regardless of string length)
   - `proxy::iterateValues` yields code point `String`s
-  - `iterate` returns a `CharacterIterator`
-  - `iterateRightToLeft` returns a `RightToLeftCharacterIterator`
+  - `iterate` returns a `CharIterator`
+  - `iterateRightToLeft` returns a `RightToLeftCharIterator`
   - `charAt(index:Int|StringIndex)`
   - `charCodeAt(index:Int|StringIndex)`
   - `slice(from:Int|StringIndex, to:undefined|Int|StringIndex = undefined)`
@@ -75,7 +75,7 @@ Uncategorized:
     - `indexToUTF8Index(index)`
     - `utf8IndexToIndex(index, skip:{initialIndexUTF8, initialIndex}? = null)`
       - The `skip` parameter can be specified for faster calculations given assumption that the previous indexes of the index to compute are known beforehand.
-- `CharacterIterator`
+- `CharIterator`
   - Implements `Iterator.<Int>`
   - `index:StringIndex` writable
   - `hasRemaining`
@@ -86,7 +86,7 @@ Uncategorized:
   - `skipSequence(length:Int)` length is in code points
   - `backward(length:Int = 1)`
   - `clone()`
-- `RightToLeftCharacterIterator`
+- `RightToLeftCharIterator`
   - Implements `Iterator.<Int>`
   - `index:StringIndex` writable
   - Indexing (`s.characters[i]`) is equivalent to `peek(i)`
