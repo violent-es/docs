@@ -145,34 +145,34 @@ Uncategorized:
 - `Math` namespace
 - `Reflect` namespace
   - `construct(o:*, arguments:[*]):*`
-  - `describeFunction(f:Function):com.violetscript.meta.Function`
-  - `describeType(type:Class):com.violetscript.meta.Type`
+  - `describeFunction(f:Function):violetscript.meta.Function`
+  - `describeType(type:Class):violetscript.meta.Type`
   - `getConstructorOf(o:*):Class?`
   - `get(o:*, k:String):*`
   - `set(o:*, k:String, v:*):Boolean`
-- `com.violetscript.meta.Binding`
+- `violetscript.meta.Binding`
   - `name:String`
   - `type:Class`
-- `com.violetscript.meta.VariableProperty`
-- `com.violetscript.meta.VirtualProperty`
-- `com.violetscript.meta.Function`
-  - `requiredParams:[com.violetscript.meta.Binding]?`
-  - `optParams:[com.violetscript.meta.Binding]?`
-  - `restParam:com.violetscript.meta.Binding?`
+- `violetscript.meta.VariableProperty`
+- `violetscript.meta.VirtualProperty`
+- `violetscript.meta.Function`
+  - `requiredParams:[violetscript.meta.Binding]?`
+  - `optParams:[violetscript.meta.Binding]?`
+  - `restParam:violetscript.meta.Binding?`
   - `returnType:Class`
-- `com.violetscript.meta.Type`
-  - `com.violetscript.meta.AnyType`
-  - `com.violetscript.meta.UndefinedType`
-  - `com.violetscript.meta.NullType`
-  - `com.violetscript.meta.ClassType`
-  - `com.violetscript.meta.EnumType`
-  - `com.violetscript.meta.InterfaceType`
-  - `com.violetscript.meta.InstantiationType`
-  - `com.violetscript.meta.UnionType`
-  - `com.violetscript.meta.TupleType`
-  - `com.violetscript.meta.RecordType`
-  - `com.violetscript.meta.FunctionType`
-  - `com.violetscript.meta.TypeParameter`
+- `violetscript.meta.Type`
+  - `violetscript.meta.AnyType`
+  - `violetscript.meta.UndefinedType`
+  - `violetscript.meta.NullType`
+  - `violetscript.meta.ClassType`
+  - `violetscript.meta.EnumType`
+  - `violetscript.meta.InterfaceType`
+  - `violetscript.meta.InstantiationType`
+  - `violetscript.meta.UnionType`
+  - `violetscript.meta.TupleType`
+  - `violetscript.meta.RecordType`
+  - `violetscript.meta.FunctionType`
+  - `violetscript.meta.TypeParameter`
 - `Temporal` namespace
   - Based on https://tc39.es/proposal-temporal/docs
 - `JSON`
