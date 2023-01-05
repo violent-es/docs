@@ -33,7 +33,7 @@ Uncategorized:
   - `static fromCharCode()`
   - `'$a $$'.apply({ a: 10 })` (formatting function)
   - `'$1 $2'.apply(['one', 'two'])` (formatting function)
-  - Index operator returns single-character `String` or empty `String` if out of bounds (accepts `Int|StringIndex`)
+  - Index operator returns single-character `String` or empty `String` if out of bounds (accepts `Int|StringIndex|GraphemeIndex`)
   - `length` returns number of code points
   - `isEmpty`
   - `startIndex:StringIndex` (`{#default: 0, utf8: 0}`)
