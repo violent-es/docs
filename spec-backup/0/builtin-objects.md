@@ -26,6 +26,8 @@ Uncategorized:
   - greater than or equals (`proxy::ge`)
   - `add(codePoints:Int, base:String):StringIndex` Adds `codePoints` to index given base string
   - `subtract(codePoints:Int, base:String):StringIndex` Subtracts `codePoints` to index given base string
+- `GraphemeIndex`
+ - Similiar to `StringIndex`, but also contains a `grapheme:Int` property.
 - `String`
   - String is UTF-8.
   - `static fromCharCode()`
@@ -51,14 +53,14 @@ Uncategorized:
   - `iterate` returns a `CharIterator`
   - `iterateRightToLeft` returns a `RightToLeftCharIterator`
   - `charAt(index:Int|StringIndex)`
-  - `charCodeAt(index:Int|StringIndex)`
-  - `slice(from:Int|StringIndex, to:undefined|Int|StringIndex = undefined)`
+  - `charCodeAt(index:Int|StringIndex|GraphemeIndex)`
+  - `slice(from:Int|StringIndex|GraphemeIndex, to:undefined|Int|StringIndex|GraphemeIndex = undefined)`
     - This method is always efficient regardless of string length if:
       - `from` is a `StringIndex` and `to` is `undefined`
       - `from` and `to` are `StringIndex`es.
-  - `substr(index:Int|StringIndex, length)`
+  - `substr(index:Int|StringIndex|GraphemeIndex, length)`
     - `length` is in code points
-  - `substring(from:Int|StringIndex, to:undefined|Int|StringIndex = undefined)`
+  - `substring(from:Int|StringIndex|GraphemeIndex, to:undefined|Int|StringIndex|GraphemeIndex = undefined)`
     - This method is always efficient regardless of string length if:
       - `from` is a `StringIndex` and `to` is `undefined`
       - `from` and `to` are `StringIndex`es.
@@ -243,9 +245,8 @@ Assertion:
 
 ## Future built-ins
 
-- String
+- `String`
   - `iterateGraphemes`
   - `iterateGraphemesRightToLeft`
-- GraphemeIndex
-- GraphemeIterator
-- RightToLeftGraphemeIterator
+- `GraphemeIterator`
+- `RightToLeftGraphemeIterator`
