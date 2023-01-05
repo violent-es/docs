@@ -240,3 +240,11 @@ Assertion:
 - `assertNotEquals()`
 - `assertThrows()`
 - `assertDoesntThrow()`
+
+## Future built-ins
+
+- String
+  - `iterateGraphemes`
+  - `iterateGraphemesRightToLeft`
+- GraphemeIterator
+- RightToLeftGraphemeIterator
