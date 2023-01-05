@@ -246,5 +246,6 @@ Assertion:
 - String
   - `iterateGraphemes`
   - `iterateGraphemesRightToLeft`
+- GraphemeIndex
 - GraphemeIterator
 - RightToLeftGraphemeIterator
