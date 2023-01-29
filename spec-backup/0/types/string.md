@@ -1,6 +1,6 @@
 # String Type
 
-The `String` data type is UTF-8 encoded. Use `iterate` for fast code point iteration and UTF-8 specific methods for fast manipulation. Methods that take `StringIndex` should be efficient since `StringIndex` contains an UTF-8 index within itself.
+The `String` data type is UTF-8 encoded. Use `chars` for fast code point iteration and UTF-8 specific methods for fast manipulation. Methods that take `StringIndex` should be efficient since `StringIndex` contains an UTF-8 index within itself.
 
 ```
 var s = 'foo\u{1F602}foo';
@@ -16,12 +16,13 @@ s.slice(3, 4); // '\u{1F602}'
 // internally iterate the UTF-8 content.
 
 var i = s.lastIndexOf('foo'); // StringIndex?
+i?.source; // index origin String
 i?.default; // index in code points
 i?.utf8; // index in UTF-8 octets
 
 // left-to-right iterator
 
-var it = s.iterate;
+var it = s.chars;
 it.hasRemaining;
 it.index; // StringIndex
 it.peek(); // it[0]
@@ -32,7 +33,7 @@ it.skipSequence(3);
 
 // right-to-left iterator
 
-var it = s.iterateRightToLeft;
+var it = s.rightToLeftChars;
 it[0]; // last character
 
 // for special cases: UTF-8 specific operations

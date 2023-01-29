@@ -18,14 +18,15 @@ Uncategorized:
   - `writable:Boolean`
 - `StringIndex`
   - Value class that represents a `String` index in different units: index in code points, `default`, and index in UTF-8 octets, `utf8`.
+  - `source:String` is the string the `StringIndex` points to. This is neccessary to allow add and subtract operations.
   - `#default:Int`
   - `utf8:Int`
   - less than (`proxy::lt`)
   - greater than (`proxy::gt`)
   - less than or equals (`proxy::le`)
   - greater than or equals (`proxy::ge`)
-  - `add(codePoints:Int, base:String):StringIndex` Adds `codePoints` to index given base string
-  - `subtract(codePoints:Int, base:String):StringIndex` Subtracts `codePoints` to index given base string
+  - `proxy::add(codePoints:Int):StringIndex` Adds `codePoints` to index based in the source string
+  - `proxy::subtract(codePoints:Int):StringIndex` Subtracts `codePoints` to index based in the source string
 - `GraphemeIndex`
  - Similiar to `StringIndex`, but also contains a `grapheme:Int` property.
 - `String`
@@ -50,8 +51,8 @@ Uncategorized:
   - Read-only `firstChar:String` - returns first code point into string
   - Read-only `lastChar:String` - returns last code point into string (fast regardless of string length)
   - `proxy::iterateValues` yields code point `String`s
-  - `iterate` returns a `CharIterator`
-  - `iterateRightToLeft` returns a `RightToLeftCharIterator`
+  - `chars` returns a `CharIterator`
+  - `rightToLeftChars` returns a `RightToLeftCharIterator`
   - `charAt(index:Int|StringIndex)`
   - `charCodeAt(index:Int|StringIndex|GraphemeIndex)`
   - `slice(from:Int|StringIndex|GraphemeIndex, to:undefined|Int|StringIndex|GraphemeIndex = undefined)`
@@ -81,7 +82,7 @@ Uncategorized:
   - Implements `Iterator.<Int>`
   - `index:StringIndex` writable
   - `hasRemaining`
-  - Indexing (`s.characters[i]`) is equivalent to `peek(i)`
+  - Indexing (`s.chars[i]`) is equivalent to `peek(i)`
   - `peek(relativeIndex = 0)` relative index is given in code points; if negative, relative index is behind
   - `peekSequence(length:Int):String` length is in code points
   - `next()` yields `Int`
@@ -91,9 +92,9 @@ Uncategorized:
 - `RightToLeftCharIterator`
   - Implements `Iterator.<Int>`
   - `index:StringIndex` writable
-  - Indexing (`s.characters[i]`) is equivalent to `peek(i)`
+  - Indexing (`s.rightToLeftChars[i]`) is equivalent to `peek(i)`
   - `peek(relativeIndex = 0)` relative index is given in code points; if negative, relative index is ahead
-  - `peekSequence(length:Int):String` length is in code points, without inverting the string. For example, `'ecma'.iterateRightToLeft.peekSequence(4)` equals `'ecma'`, not `'amce'`.
+  - `peekSequence(length:Int):String` length is in code points, without inverting the string. For example, `'ecma'.rightToLeftChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
   - `next()` yields `Int`
   - `skipSequence(length:Int)` length is in code points
   - `forward(length:Int = 1)`
@@ -246,7 +247,7 @@ Assertion:
 ## Future built-ins
 
 - `String`
-  - `iterateGraphemes`
-  - `iterateGraphemesRightToLeft`
+  - `graphemes`
+  - `rightToLeftGraphemes`
 - `GraphemeIterator`
 - `RightToLeftGraphemeIterator`
