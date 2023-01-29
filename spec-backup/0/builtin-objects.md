@@ -19,7 +19,6 @@ Uncategorized:
 - `StringIndex`
   - Value class that represents a `String` index in different units: index in code points, `default`, and index in UTF-8 octets, `utf8`.
   - `source:String` is the string the `StringIndex` points to. This is neccessary to allow add and subtract operations.
-  - `StringIndex(source, #default, utf8)`
   - `#default:Int`
   - `utf8:Int`
   - less than (`proxy::lt`)
