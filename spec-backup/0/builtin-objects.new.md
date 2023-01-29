@@ -107,3 +107,178 @@ The String data type is UTF-8 encoded, but it is manipuled by code points.
   - This method is always efficient regardless of string length if:
     - `from` is a `StringIndex` and `to` is `undefined`
     - `from` and `to` are `StringIndex`es.
+
+## UTF8 (namespace)
+
+**Methods:**
+
+- `static length(str)` = number of octets
+- `static octetAt(str, indexUTF8)`
+- `static sizeAt(str, indexUTF8)`
+- `static charAt(str, indexUTF8)`
+- `static charCodeAt(str, indexUTF8)`
+- `static slice(str, fromUTF8Index, toUTF8Index = +Infinity)`
+- `static substr(str, indexUTF8, length)`
+  - `length` is in code points
+- `static substring(str, fromUTF8Index, toUTF8Index = +Infinity)`
+- `static indexToUTF8Index(str, index)`
+- `static utf8IndexToIndex(str, index, skip:{initialIndexUTF8, initialIndex}? = null)`
+  - The `skip` parameter can be specified for faster calculations given assumption that the previous indexes of the index to compute are known beforehand.
+
+## CharIterator
+
+**Implements:** Iterator.\<Int>
+
+**Properties:**
+
+- `index:StringIndex`: Writable
+- `hasRemaining:Boolean`
+
+**Proxies:**
+
+- Indexing (`s.chars[i]`): Equivalent to `s.peek(i)`
+
+**Methods:**
+
+- `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is behind
+- `peekSequence(length:Int):String`: Length is in code points
+- `next()`: Yields `Int`
+- `skipSequence(length:Int)`: Length is in code points
+- `backward(length:Int = 1)`
+- `clone()`
+
+## RightToLeftCharIterator
+
+- `index:StringIndex`: Writable
+- `hasRemaining:Boolean`
+
+**Proxies:**
+
+- Indexing (`s.rightToLeftChars[i]`): Equivalent to `s.peek(i)`
+
+**Methods:**
+
+- `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is ahead
+- `peekSequence(length:Int):String`: Length is in code points, without inverting the String. For example, `'ecma'.rightToLeftChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
+- `next()`: Yields `Int`
+- `skipSequence(length:Int)`: Length is in code points
+- `forward(length:Int = 1)`
+- `clone()`
+
+## Function
+
+Basically used for untyped functions, but also a super type of structural function types.
+
+**Extends:** Class
+
+## Array.\<T>
+
+`Array` does not implement `Iterator` because of the methods return type (return `Array` versus an abstract `Iterator`).
+
+**Properties:**
+
+- `first`
+- `last`
+- `length`
+
+**Proxies:**
+
+- Indexing (including `delete`)
+- `for each`
+
+**Methods:**
+
+- `reverse()` - mutates existing `Array`
+- `equals(anotherArray)`
+- `deepEquals(anotherArray)`
+- `insertAt(pos ,v):void`
+- `removeAt(pos):undefined|T`
+- Several other methods in EcmaScript
+
+## Stack.\<T>
+
+**Properties:**
+
+- `length`
+
+**Methods:**
+
+- `peek():undefined|T`
+- `push()`
+- `pop()`
+
+## Queue.\<T>
+
+**Properties:**
+
+- `length`
+
+**Methods:**
+
+- `peek():undefined|T`
+- `enqueue(v:T)`: Adds value to the end of the queue
+- `dequeue():undefined|T`: Removes and returns the value at the beginning of the queue, or returns `undefined` if empty
+
+## Map.\<K, V>
+
+Items are ordered by insertion.
+
+**Constructor:**
+
+- `new Map`
+- `new Map(entries:[K, V])`
+- `new Map(anotherMap)`: Clones another Map object.
+
+**Properties:**
+
+- `length`
+
+## WeakMap.\<K, V>
+
+Similiar to Map, but with weak key references.
+
+## Set.\<T>
+
+Items are ordered by insertion.
+
+**Proxies:**
+
+- `for each`
+- `in`
+
+**Properties:**
+
+- `length`
+
+**Methods:**
+
+- `add(v:T):void`
+- `#delete(v:T):Boolean`
+
+## WeakSet.\<T>
+
+Similiar to Set.
+
+## Promise.\<T>
+
+## Generator.\<T>
+
+**Implements:** Iterator.\<T>
+
+## undefined
+
+## NaN
+
+## Infinity
+
+## Class
+
+Not final.
+
+## ByteArray
+
+## Intl (namespace)
+
+## Math (namespace)
+
+## Reflect (namespace)
