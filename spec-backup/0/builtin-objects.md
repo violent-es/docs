@@ -440,6 +440,7 @@ Used by the `use resource` statement.
 - `AssertionError`
 - `RangeError`
 - `ReferenceError`
+- `TypeError`
 
 ## Assertion Functions
 
