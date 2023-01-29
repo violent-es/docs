@@ -66,7 +66,7 @@ Value class that represents a `String` index in different units: index in code p
 
 ## GraphemeIndex
 
-Similiar to StringIndex, but `default` property is in graphemes and provides a `codePoints` index. Operations such as addition and subtraction are in graphemes.
+Similiar to StringIndex, but with a `graphemes` property. Operations such as addition and subtraction are in graphemes.
 
 ## String
 
