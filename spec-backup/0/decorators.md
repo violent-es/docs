@@ -48,3 +48,7 @@ The following decorators are reserved, but can still be used if they do not dire
 
 - When applied to a class, `[Value]` is reserved
 - When applied to an enum, `[Flags]` is reserved
+
+## Futurely-reserved
+
+- `[Partial]` applied to classes and enums.
