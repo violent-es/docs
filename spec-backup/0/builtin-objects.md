@@ -19,6 +19,7 @@ Uncategorized:
 - `StringIndex`
   - Value class that represents a `String` index in different units: index in code points, `default`, and index in UTF-8 octets, `utf8`.
   - `source:String` is the string the `StringIndex` points to. This is neccessary to allow add and subtract operations.
+  - `StringIndex(source, #default, utf8)`
   - `#default:Int`
   - `utf8:Int`
   - less than (`proxy::lt`)
@@ -65,19 +66,19 @@ Uncategorized:
     - This method is always efficient regardless of string length if:
       - `from` is a `StringIndex` and `to` is `undefined`
       - `from` and `to` are `StringIndex`es.
-  - UTF-8 indexed operations
-    - `lengthUTF8` number of octets
-    - `octetAtUTF8(indexUTF8)`
-    - `sizeAtUTF8(indexUTF8)`
-    - `charAtUTF8(indexUTF8)`
-    - `charCodeAtUTF8(indexUTF8)`
-    - `sliceUTF8(fromUTF8Index, toUTF8Index = +Infinity)`
-    - `substrUTF8(indexUTF8, length)`
-      - `length` is in code points
-    - `substringUTF8(fromUTF8Index, toUTF8Index = +Infinity)`
-    - `indexToUTF8Index(index)`
-    - `utf8IndexToIndex(index, skip:{initialIndexUTF8, initialIndex}? = null)`
-      - The `skip` parameter can be specified for faster calculations given assumption that the previous indexes of the index to compute are known beforehand.
+- `UTF8`
+  - `length(str)` = number of octets
+  - `octetAt(str, indexUTF8)`
+  - `sizeAt(str, indexUTF8)`
+  - `charAt(str, indexUTF8)`
+  - `charCodeAt(str, indexUTF8)`
+  - `slice(str, fromUTF8Index, toUTF8Index = +Infinity)`
+  - `substr(str, indexUTF8, length)`
+    - `length` is in code points
+  - `substring(str, fromUTF8Index, toUTF8Index = +Infinity)`
+  - `indexToUTF8Index(str, index)`
+  - `utf8IndexToIndex(str, index, skip:{initialIndexUTF8, initialIndex}? = null)`
+    - The `skip` parameter can be specified for faster calculations given assumption that the previous indexes of the index to compute are known beforehand.
 - `CharIterator`
   - Implements `Iterator.<Int>`
   - `index:StringIndex` writable
