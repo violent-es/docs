@@ -90,7 +90,7 @@ The String data type is UTF-8 encoded, but it is manipuled by code points.
 **Methods:**
 
 - `static fromCharCode(...):String`
-- `apply(arguments:Map.<String, String>|[String]):String`: Formats arguments.
+- `apply(arguments:Map.<String, *>|[*]):String`: Formats arguments.
   - `'$a $$'.apply({ a: 10 })`
   - `'$1 $2'.apply(['one', 'two'])`
   - Parameter `RegExp`: `/\$([a-z0-9]+|\$)/gi`
@@ -190,9 +190,9 @@ Basically used for untyped functions, but also a super type of structural functi
 
 **Properties:**
 
-- `first`
-- `last`
-- `length`
+- `first:undefined|T`
+- `last:undefined|T`
+- `length:Int`
 
 **Proxies:**
 
