@@ -4,6 +4,17 @@
 
 This is a property that refers to the global package.
 
+This can be used to refer to a package or top-level definition that starts with a scope conflicting name. For example:
+
+```
+var com = 10;
+global.com.qux.f();
+// another example
+const Infinity = 10;
+var x = Infinity;
+var y = global.Infinity;
+```
+
 ## Iterator.\<T>
 
 **Extends:** Generator.\<T>
@@ -282,3 +293,166 @@ Not final.
 ## Math (namespace)
 
 ## Reflect (namespace)
+
+**Methods:**
+
+- `construct(o:*, arguments:[*]):*`
+- `describeFunction(f:Function):violetscript.meta.Function`
+- `describeType(type:Class):violetscript.meta.Type`
+- `constructorOf(o:*):Class?`
+- `get(o:*, k:String):*`
+- `set(o:*, k:String, v:*):Boolean`
+
+## violetscript.meta.Binding
+
+**Properties:**
+
+- `name:String`
+- `type:Class`
+
+## violetscript.meta.VariableProperty
+
+## violetscript.meta.VirtualProperty
+
+## violetscript.meta.Function
+
+**Properties:**
+
+- `requiredParams:[violetscript.meta.Binding]?`
+- `optParams:[violetscript.meta.Binding]?`
+- `restParam:violetscript.meta.Binding?`
+- `returnType:Class`
+
+## violetscript.meta.Type
+
+**Subtypes:**
+
+- violetscript.meta.AnyType
+- violetscript.meta.UndefinedType
+- violetscript.meta.NullType
+- violetscript.meta.ClassType
+- violetscript.meta.EnumType
+- violetscript.meta.InterfaceType
+- violetscript.meta.InstantiationType
+- violetscript.meta.UnionType
+- violetscript.meta.TupleType
+- violetscript.meta.RecordType
+- violetscript.meta.FunctionType
+- violetscript.meta.TypeParameter
+
+## Temporal (namespace)
+
+Based on https://tc39.es/proposal-temporal/docs.
+
+## JSON (namespace)
+
+## Boolean
+
+## Number
+
+**Methods:**
+
+- `static range(start, end, step?):Iterator.<Number>`
+
+## Decimal
+
+**Methods:**
+
+- `static range(start, end, step?):Iterator.<Decimal>`
+
+## Byte
+
+**Methods:**
+
+- `static range(start, end, step?):Iterator.<Byte>`
+
+## Short
+
+**Methods:**
+
+- `static range(start, end, step?):Iterator.<Short>`
+
+## Int
+
+**Methods:**
+
+- `static range(start, end, step?):Iterator.<Int>`
+
+## Long
+
+**Methods:**
+
+- `static range(start, end, step?):Iterator.<Long>`
+
+## BigInt
+
+**Methods:**
+
+- `static range(start, end, step?):Iterator.<BigInt>`
+
+## Object
+
+## RegExp
+
+**Features:**
+
+- Supports the flag `x` for ignoring whitespace and line breaks
+- Supports `\p{...}` and `\u{...}`.
+- Matched capture groups get a `StringIndex` record.
+
+## Boxed.\<T>
+
+Boxed is currently undefined. In the future it may be used to indicate that a structural record or tuple is a mutable object reference.
+
+## IDisposable.\<T>
+
+Used by the `use resource` statement.
+
+**Methods:**
+
+- `dispose():void`
+
+## trace()
+
+## parseInt()
+
+## parseFloat()
+
+## encodeURI()
+
+## decodeURI()
+
+## encodeURIComponent()
+
+## decodeURIComponent()
+
+## isNaN()
+
+## isFinite()
+
+## Error
+
+**Subtypes:**
+
+- `ArgumentError`
+- `AssertionError`
+- `RangeError`
+- `ReferenceError`
+
+## Assertion Functions
+
+Assertion functions:
+
+- `assert()`
+- `assertEquals()`
+- `assertNotEquals()`
+- `assertThrows()`
+- `assertDoesntThrow()`
+
+## Future Built-ins
+
+- `String`
+  - `graphemes`
+  - `rightToLeftGraphemes`
+- `GraphemeIterator`
+- `RightToLeftGraphemeIterator`
