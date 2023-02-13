@@ -166,3 +166,5 @@ Context keywords:
   - Used for type declarations
 - `undefined`
   - Used for undefined type expression
+- `wraps`
+  - Used for enumeration definitions.

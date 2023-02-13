@@ -66,7 +66,7 @@ p = Permissions.all;
 Custom numeric type:
 
 ```
-enum E:BigInt {
+enum E wraps BigInt {
 }
 ```
 
