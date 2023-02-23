@@ -304,24 +304,30 @@ Not final.
 - `get(o:*, k:String):*`
 - `set(o:*, k:String, v:*):Boolean`
 
-## BindingReflection
+## Binding
+
+Binding reflection.
 
 **Properties:**
 
 - `name:String`
 - `type:Class`
 
-## VariablePropertyReflection
+## VariableProperty
 
-## VirtualPropertyReflection
+Variable property reflection.
+
+## VirtualProperty
+
+Virtual property reflection.
 
 ## FunctionReflection
 
 **Properties:**
 
-- `requiredParams:[BindingReflection]?`
-- `optParams:[BindingReflection]?`
-- `restParam:BindingReflection?`
+- `requiredParams:[Binding]?`
+- `optParams:[Binding]?`
+- `restParam:Binding?`
 - `returnType:Class`
 
 ## TypeReflection
