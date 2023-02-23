@@ -331,9 +331,8 @@ Represents any type.
 - Binding
   - `name:String`
   - `type:Class`
-- VariableProperty
-- VirtualProperty
-- MethodProperty
+  - `readOnly:Boolean`
+  - `writable:Boolean`
 - AnyType
 - UndefinedType
 - NullType
