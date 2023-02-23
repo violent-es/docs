@@ -329,6 +329,7 @@ Represents any type.
 ## "Type meta-objects"
 
 - Binding
+  - Represents general name bindings, including variable and virtual properties and methods.
   - `name:String`
   - `type:Class`
   - `readOnly:Boolean`
