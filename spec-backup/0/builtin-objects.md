@@ -321,7 +321,7 @@ Represents any type.
 **Methods:**
 
 - `construct(o:*, arguments:[*]):*`
-- `typeOf(type:Class):*`
+- `typeOf(type:Class):Object`
   - Returns a type meta-object describing the given type.
 - `get(o:*, k:String):*`
 - `set(o:*, k:String, v:*):Boolean`
