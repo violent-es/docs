@@ -37,14 +37,6 @@ Interface for markup expressions such as `<C></C>`.
 
 - `INodeContainer_add(child:T):void`
 
-## DecoratorProperty
-
-**Properties:**
-
-- `name:String`
-- `type:Class`
-- `writable:Boolean`
-
 ## StringIndex
 
 Value class that represents a `String` index in different units: index in code points, `default`, and index in UTF-8 octets, `utf8`.
@@ -331,7 +323,7 @@ Represents any type.
 Type meta-objects describe types at runtime.
 
 - Binding
-  - Represents general name bindings, including variable and virtual properties and methods.
+  - Represents general name bindings, including variable and virtual properties and methods. Also used for decorated properties.
   - `name:String`
   - `type:Class`
   - `readOnly:Boolean`
