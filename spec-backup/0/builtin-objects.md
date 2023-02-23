@@ -186,6 +186,8 @@ Basically used for untyped functions, but also a super type of structural functi
 
 ## Array.\<T>
 
+(Final.)
+
 `Array` does not implement `Iterator` because of the methods return type (return `Array` versus an abstract `Iterator`).
 
 **Properties:**
@@ -210,6 +212,8 @@ Basically used for untyped functions, but also a super type of structural functi
 
 ## Stack.\<T>
 
+(Final.)
+
 **Properties:**
 
 - `length`
@@ -222,6 +226,8 @@ Basically used for untyped functions, but also a super type of structural functi
 
 ## Queue.\<T>
 
+(Final.)
+
 **Properties:**
 
 - `length`
@@ -233,6 +239,8 @@ Basically used for untyped functions, but also a super type of structural functi
 - `dequeue():undefined|T`: Removes and returns the value at the beginning of the queue, or returns `undefined` if empty
 
 ## Map.\<K, V>
+
+(Final.)
 
 Items are ordered by insertion.
 
@@ -248,9 +256,13 @@ Items are ordered by insertion.
 
 ## WeakMap.\<K, V>
 
+(Final.)
+
 Similiar to Map, but with weak key references.
 
 ## Set.\<T>
+
+(Final.)
 
 Items are ordered by insertion.
 
@@ -270,11 +282,17 @@ Items are ordered by insertion.
 
 ## WeakSet.\<T>
 
+(Final.)
+
 Similiar to Set.
 
 ## Promise.\<T>
 
+(Final.)
+
 ## Generator.\<T>
+
+(Final.)
 
 **Implements:** Iterator.\<T>
 
@@ -286,9 +304,13 @@ Similiar to Set.
 
 ## Class
 
-Not final.
+(Non-final.)
+
+Represents any type.
 
 ## ByteArray
+
+(Final.)
 
 ## Intl (namespace)
 
@@ -299,8 +321,7 @@ Not final.
 **Methods:**
 
 - `construct(o:*, arguments:[*]):*`
-- `describeFunction(f:Function):FunctionReflection`
-- `describeType(type:Class):TypeReflection`
+- `describeType(type:Class):*`
 - `get(o:*, k:String):*`
 - `set(o:*, k:String, v:*):Boolean`
 
@@ -321,18 +342,9 @@ Variable property reflection.
 
 Virtual property reflection.
 
-## FunctionReflection
+## MethodProperty
 
-**Properties:**
-
-- `requiredParams:[Binding]?`
-- `optParams:[Binding]?`
-- `restParam:Binding?`
-- `returnType:Class`
-
-## TypeReflection
-
-**Subtypes:**
+## "Reflection Types"
 
 - AnyType
 - UndefinedType
@@ -345,6 +357,10 @@ Virtual property reflection.
 - TupleType
 - RecordType
 - FunctionType
+  - `requiredParams:[Binding]?`
+  - `optParams:[Binding]?`
+  - `restParam:Binding?`
+  - `returnType:Class`
 - TypeParameter
 
 ## Temporal (namespace)
