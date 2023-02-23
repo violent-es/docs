@@ -299,48 +299,48 @@ Not final.
 **Methods:**
 
 - `construct(o:*, arguments:[*]):*`
-- `describeFunction(f:Function):violetscript.meta.Function`
-- `describeType(type:Class):violetscript.meta.Type`
+- `describeFunction(f:Function):FunctionReflection`
+- `describeType(type:Class):TypeReflection`
 - `constructorOf(o:*):Class?`
 - `get(o:*, k:String):*`
 - `set(o:*, k:String, v:*):Boolean`
 
-## violetscript.meta.Binding
+## BindingReflection
 
 **Properties:**
 
 - `name:String`
 - `type:Class`
 
-## violetscript.meta.VariableProperty
+## VariablePropertyReflection
 
-## violetscript.meta.VirtualProperty
+## VirtualPropertyReflection
 
-## violetscript.meta.Function
+## FunctionReflection
 
 **Properties:**
 
-- `requiredParams:[violetscript.meta.Binding]?`
-- `optParams:[violetscript.meta.Binding]?`
-- `restParam:violetscript.meta.Binding?`
+- `requiredParams:[BindingReflection]?`
+- `optParams:[BindingReflection]?`
+- `restParam:BindingReflection?`
 - `returnType:Class`
 
-## violetscript.meta.Type
+## TypeReflection
 
 **Subtypes:**
 
-- violetscript.meta.AnyType
-- violetscript.meta.UndefinedType
-- violetscript.meta.NullType
-- violetscript.meta.ClassType
-- violetscript.meta.EnumType
-- violetscript.meta.InterfaceType
-- violetscript.meta.InstantiationType
-- violetscript.meta.UnionType
-- violetscript.meta.TupleType
-- violetscript.meta.RecordType
-- violetscript.meta.FunctionType
-- violetscript.meta.TypeParameter
+- AnyType
+- UndefinedType
+- NullType
+- ClassType
+- EnumType
+- InterfaceType
+- InstantiationType
+- UnionType
+- TupleType
+- RecordType
+- FunctionType
+- TypeParameter
 
 ## Temporal (namespace)
 
