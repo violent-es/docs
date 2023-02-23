@@ -301,7 +301,6 @@ Not final.
 - `construct(o:*, arguments:[*]):*`
 - `describeFunction(f:Function):FunctionReflection`
 - `describeType(type:Class):TypeReflection`
-- `constructorOf(o:*):Class?`
 - `get(o:*, k:String):*`
 - `set(o:*, k:String, v:*):Boolean`
 
@@ -393,6 +392,10 @@ Based on https://tc39.es/proposal-temporal/docs.
 - `static range(start, end, step?):Iterator.<BigInt>`
 
 ## Object
+
+**Properties:**
+
+- `constructor:Class`: read-only reference to the constructor type of an object.
 
 ## RegExp
 
