@@ -321,34 +321,24 @@ Represents any type.
 **Methods:**
 
 - `construct(o:*, arguments:[*]):*`
-- `describeType(type:Class):*`
+- `typeOf(type:Class):*`
+  - Returns a type meta-object describing the given type.
 - `get(o:*, k:String):*`
 - `set(o:*, k:String, v:*):Boolean`
 
-## Binding
+## "Type meta-objects"
 
-Binding reflection.
-
-**Properties:**
-
-- `name:String`
-- `type:Class`
-
-## VariableProperty
-
-Variable property reflection.
-
-## VirtualProperty
-
-Virtual property reflection.
-
-## MethodProperty
-
-## "Reflection Types"
-
+- Binding
+  - `name:String`
+  - `type:Class`
+- VariableProperty
+- VirtualProperty
+- MethodProperty
 - AnyType
 - UndefinedType
 - NullType
+- ArrayType
+  - Represents an instantiation of the Array class.
 - ClassType
 - EnumType
 - InterfaceType
