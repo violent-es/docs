@@ -85,8 +85,8 @@ The String data type is UTF-8 encoded, but it is manipuled by code points.
 - `apply(arguments:Map.<String, *>|[*]):String`: Formats arguments.
   - `'$a $$'.apply({ a: 10 })`
   - `'$1 $2'.apply(['one', 'two'])`
-  - `'$<foo-bar>'.apply(...)` allows name with hyphen and underscore
-  - Parameter `RegExp`: `/\$([a-z0-9]+|\$)/gi`
+  - `'$<IE_bar>'.apply(...)` allows name with hyphen and underscore
+  - Internally used regular expression: `/\$([a-z0-9]+|<[a-z_\-0-9]+>|\$)/gi`
 - `repeat()`
 - `replace()`: Similiar to EcmaScript
 - `match()`: Similiar to EcmaScript
