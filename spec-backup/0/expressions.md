@@ -15,7 +15,7 @@
   - `function name() 10`
   - `function() throws Error {}`
 - XML-like node initializer
-  - `<C></C>` can initialize class _**without**_ constructor that implements `INodeContainer`.
+  - `<C></C>` can initialize class _**without**_ constructor that implements `IMarkupContainer`.
   - `<N/>` can initialize class _**without**_ constructor (including across inheritance).
   - Spreads (`<>{anotherArrayOfNodes}</>`)
   - Unlike XML, attributes do not have namespace

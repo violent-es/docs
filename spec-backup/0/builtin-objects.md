@@ -29,13 +29,13 @@ var y = global.Infinity;
 - `toArray():[T]`
 - Array-like functional methods such as `map()` and `some()`
 
-## INodeContainer.\<T>
+## IMarkupContainer.\<T>
 
 Interface for markup expressions such as `<C></C>`.
 
 **Methods:**
 
-- `INodeContainer_add(child:T):void`
+- `IMarkupContainer_add(child:T):void`
 
 ## StringIndex
 
