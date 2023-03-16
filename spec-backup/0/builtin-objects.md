@@ -87,6 +87,8 @@ The String data type is UTF-8 encoded, but it is manipuled by code points.
   - `'$1 $2'.apply(['one', 'two'])`
   - `'$<IE_bar>'.apply(...)` allows name with hyphen and underscore
   - Internally used regular expression: `/\$([a-z0-9]+|<[a-z_\-0-9]+>|\$)/gi`
+  - Futurely we can support advanced parameters with formatting options, such as:
+    - `${name=qux,x=y,z=w}`
 - `repeat()`
 - `replace()`: Similiar to EcmaScript
 - `match()`: Similiar to EcmaScript
