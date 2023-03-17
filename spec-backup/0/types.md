@@ -270,4 +270,4 @@ The types `*` and `null|...` contain `null`. All other types are non-nullable.
 
 ## Truthy value
 
-`undefined`, `null`, `false`, `0`, `NaN` and `''` are falsy values. All other values are truthy.
+`undefined`, `null`, `false`, `0`, `NaN`, `''` and empty flags are falsy values. All other values are truthy.
