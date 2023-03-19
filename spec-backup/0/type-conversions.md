@@ -14,6 +14,7 @@ Implicit:
 - To number type with wider range
 - Non-union to compatible union
 - Union to compatible union
+- Union with null or undefined to compatible union with null or undefined
 - From record to record with equivalent field set
 - From any
 - To any
