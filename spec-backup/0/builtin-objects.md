@@ -219,6 +219,7 @@ Basically used for untyped functions, but also a super type of structural functi
 - `peek():undefined|T`
 - `push()`
 - `pop()`
+- `values():Iterator.<T>`
 
 ## Queue.\<T>
 
@@ -227,6 +228,7 @@ Basically used for untyped functions, but also a super type of structural functi
 **Properties:**
 
 - `length`
+- `values():Iterator.<T>`
 
 **Methods:**
 
@@ -249,6 +251,9 @@ Items are ordered by insertion.
 **Properties:**
 
 - `length`
+- `entries():Iterator.<[K,V]>`
+- `keys():Iterator.<K>`
+- `values():Iterator.<V>`
 
 ## WeakMap.\<K, V>
 
@@ -275,6 +280,7 @@ Items are ordered by insertion.
 
 - `add(v:T):void`
 - `delete(v:T):Boolean`
+- `values():Iterator.<T>`
 
 ## WeakSet.\<T>
 
