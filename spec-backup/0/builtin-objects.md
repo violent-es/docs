@@ -194,6 +194,7 @@ Basically used for untyped functions, but also a super type of structural functi
 **Proxies:**
 
 - Indexing (including `delete`)
+- `in` operator (determines if the `Array` includes a value)
 - `for each`
 
 **Methods:**
