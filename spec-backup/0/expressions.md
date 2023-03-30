@@ -7,9 +7,9 @@
 - Default: `default(T)` returns default value of type `T`
 - `import.meta` returns information about a script file; returns `{url: fileURL}`.
 - Function
-  - `a -> ...`
-  - `(...) -> ...`
-  - `(...) -> throws Error ...`
+  - `a => ...`
+  - `(...) => ...`
+  - `(...) => throws Error ...`
   - `function() {}`
   - `function() 10`
   - `function name() 10`

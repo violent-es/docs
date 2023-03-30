@@ -167,7 +167,7 @@ type F = function(a:Number):void;
 Arrow functions are equivalent to conventional functions, but shorter:
 
 ```
-type F = (a:Number)->void;
+type F = (a:Number)=>void;
 ```
 
 ## Tuple
