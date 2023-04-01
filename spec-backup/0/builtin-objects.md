@@ -86,7 +86,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 ## CodePointIterator
 
-**Implements:** Iterator.\<Int>
+CodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 
 **Properties:**
 
@@ -107,6 +107,8 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 - `clone()`
 
 ## RightToLeftCodePointIterator
+
+RightToLeftCodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 
 - `index:Int`: Writable
 - `hasRemaining:Boolean`
