@@ -11,7 +11,5 @@
 - [Lexical structure](./lexical-structure.md)
 - [Proxy](./proxy.md)
 - [Statements](./statements.md)
-- [Types](./types.md)
-  - [String](./types/string.md)
 - [Type conversions](./type-conversions.md)
 - [Type inference](./type-inference.md)

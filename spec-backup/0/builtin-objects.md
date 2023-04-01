@@ -37,51 +37,27 @@ Interface for markup expressions such as `<C></C>`.
 
 - `IMarkupContainer_add(child:T):void`
 
-## StringIndex
-
-Value class that represents a `String` index in different units: index in code points, `default`, and index in UTF-8 octets, `utf8`.
-
-**Properties:**
-
-- `source:String`: The string the index was extracted from.
-- `default:Int`
-- `utf8:Int`
-
-**Proxies:**
-
-- less than (`proxy::lt`)
-- greater than (`proxy::gt`)
-- less than or equals (`proxy::le`)
-- greater than or equals (`proxy::ge`)
-- `proxy::add(codePoints:Int):StringIndex`: Adds `codePoints` to index based in the source string
-- `proxy::subtract(codePoints:Int):StringIndex`: Subtracts `codePoints` to index based in the source string
-
-## GraphemeIndex
-
-Similiar to StringIndex, but with a `graphemes` property. Operations such as addition and subtraction are in graphemes.
-
 ## String
 
-The String data type is UTF-8 encoded, but it is manipuled by code points.
+The String data type is UTF-16 encoded for compatibility with the ECMA-262 String type.
 
 **Properties:**
 
 - `length:Int`: Returns number of code points.
-- `isEmpty:Boolean`: Determines if the String has no octets.
-- `startIndex:StringIndex`
-- `endIndex:StringIndex`
+- `isEmpty:Boolean`
 - `firstChar:String`
-- `lastChar:String`: Returns last code point String. The implementation should skip directly to last character.
+- `lastChar:String`
 
 **Proxies:**
 
-- Index operator: Yields single-character String or empty string if out of bounds. Accepts `Int|StringIndex|GraphemeIndex`.
+- Index operator: Yields single-character String or empty string if out of bounds.
 - Addition (`proxy::add(other:*):String`)
 - `for each`: Yields code point Strings.
 
 **Methods:**
 
 - `static fromCharCode(...):String`
+- `static fromCodePoint(...):String`
 - `apply(arguments:Map.<String, *>|[*]):String`: Formats arguments.
   - `'$a $$'.apply({ a: 10 })`
   - `'$1 $2'.apply(['one', 'two'])`
@@ -94,52 +70,29 @@ The String data type is UTF-8 encoded, but it is manipuled by code points.
 - `match()`: Similiar to EcmaScript
 - `reverse()`
 - `split()`: Accepts String and RegExp
-- `indexOf():StringIndex?`
-- `lastIndexOf():StringIndex?`
+- `indexOf():Int`
+- `lastIndexOf():Int`
 - `trim()`
 - `trimLeft()`
 - `trimRight()`
 - `startsWith()`
 - `endsWith()`
-- `chars:CharIterator`
-- `rightToLeftChars:RightToLeftCharIterator`
-- `charAt(index:Int|StringIndex):String`
-- `charCodeAt(index:Int|StringIndex|GraphemeIndex):Int`
-- `slice(from:Int|StringIndex|GraphemeIndex, to:undefined|Int|StringIndex|GraphemeIndex = undefined):String`
-  - This method is always efficient regardless of string length if:
-    - `from` is a `StringIndex` and `to` is `undefined`
-    - `from` and `to` are `StringIndex`es.
-- `substr(index:Int|StringIndex|GraphemeIndex, length:Int):String`
-  - `length` is in code points
-- `substring(from:Int|StringIndex|GraphemeIndex, to:undefined|Int|StringIndex|GraphemeIndex = undefined):String`
-  - This method is always efficient regardless of string length if:
-    - `from` is a `StringIndex` and `to` is `undefined`
-    - `from` and `to` are `StringIndex`es.
+- `codePoints():CodePointIterator`
+- `rightToLeftCodePoints():RightToLeftCodePointIterator`
+- `charAt(index:Int):String`
+- `charCodeAt(index:Int):Int`
+- `codePointAt(index:Int):Int`
+- `slice(from:Int, to:undefined|Int = undefined):String`
+- `substr(index:Int, length:undefined|Int = undefined):String`
+- `substring(from:Int, to:undefined|Int = undefined):String`
 
-## UTF8 (namespace)
-
-**Methods:**
-
-- `static length(str)` = number of octets
-- `static octetAt(str, indexUTF8)`
-- `static sizeAt(str, indexUTF8)`
-- `static charAt(str, indexUTF8)`
-- `static charCodeAt(str, indexUTF8)`
-- `static slice(str, fromUTF8Index, toUTF8Index = +Infinity)`
-- `static substr(str, indexUTF8, length)`
-  - `length` is in code points
-- `static substring(str, fromUTF8Index, toUTF8Index = +Infinity)`
-- `static indexToUTF8Index(str, index)`
-- `static utf8IndexToIndex(str, index, skip:{initialIndexUTF8, initialIndex}? = null)`
-  - The `skip` parameter can be specified for faster calculations given assumption that the previous indexes of the index to compute are known beforehand.
-
-## CharIterator
+## CodePointIterator
 
 **Implements:** Iterator.\<Int>
 
 **Properties:**
 
-- `index:StringIndex`: Writable
+- `index:Int`: Writable
 - `hasRemaining:Boolean`
 
 **Proxies:**
@@ -150,14 +103,14 @@ The String data type is UTF-8 encoded, but it is manipuled by code points.
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is behind
 - `peekSequence(length:Int):String`: Length is in code points
-- `next()`: Yields `Int`
+- `next()`: Yields code point as `Int`
 - `skipSequence(length:Int)`: Length is in code points
 - `backward(length:Int = 1)`
 - `clone()`
 
-## RightToLeftCharIterator
+## RightToLeftCodePointIterator
 
-- `index:StringIndex`: Writable
+- `index:Int`: Writable
 - `hasRemaining:Boolean`
 
 **Proxies:**
@@ -168,7 +121,7 @@ The String data type is UTF-8 encoded, but it is manipuled by code points.
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is ahead
 - `peekSequence(length:Int):String`: Length is in code points, without inverting the String. For example, `'ecma'.rightToLeftChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
-- `next()`: Yields `Int`
+- `next()`: Yields code point as `Int`
 - `skipSequence(length:Int)`: Length is in code points
 - `forward(length:Int = 1)`
 - `clone()`
@@ -419,7 +372,6 @@ Based on https://tc39.es/proposal-temporal/docs.
 
 - Supports the flag `x` for ignoring whitespace and line breaks
 - Supports `\p{...}` and `\u{...}`.
-- Matched capture groups get a `StringIndex` record.
 
 ## Boxed.\<T>
 
@@ -470,11 +422,3 @@ Assertion functions:
 - `assertNotEquals()`
 - `assertThrows()`
 - `assertDoesntThrow()`
-
-## Future Built-ins
-
-- `String`
-  - `graphemes`
-  - `rightToLeftGraphemes`
-- `GraphemeIterator`
-- `RightToLeftGraphemeIterator`

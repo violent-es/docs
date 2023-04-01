@@ -111,7 +111,6 @@ Definitions marked `static` will be inherited across subclasses.
 
 - `Boolean`
 - `String`
-  - Differently from EcmaScript, strings are UTF-8 encoded
 - `Number`
 - `Decimal`
 - `Byte`
