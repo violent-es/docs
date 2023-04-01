@@ -45,8 +45,6 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 - `length:Int`: Returns number of code points.
 - `isEmpty:Boolean`
-- `firstChar:String`
-- `lastChar:String`
 
 **Proxies:**
 
