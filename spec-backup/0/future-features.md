@@ -13,3 +13,5 @@ public use alias q.f.B;
 // form 2 (re-exports B as A)
 public use alias A = q.f.B;
 ```
+
+It is also worthy noting lexical aliases are already possible with `import`.
