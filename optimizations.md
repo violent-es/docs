@@ -8,3 +8,4 @@
 - `str.length != 0`: uses `!isEmpty`
 - `str.length > 0`: uses `!isEmpty`
 - `str.length >= 1`: uses `!isEmpty`
+- Boxing of value types: value types are interned. Primitive types like `Number` are interned in more depth, for example, values under < 512 are looked up into a particular collection.
