@@ -9,6 +9,7 @@ This can be used to refer to a package or top-level definition that starts with 
 ```
 var com = 10;
 global.com.qux.f();
+
 // another example
 const Infinity = 10;
 var x = Infinity;
@@ -25,8 +26,8 @@ var y = global.Infinity;
 
 **Methods:**
 
-- `next():{done:Boolean, value:undefined|T}`
-- `toArray():[T]`
+- `next() : {done : Boolean, value : undefined|T}`
+- `toArray() : [T]`
 - Array-like functional methods such as `map()` and `some()`
 
 ## IMarkupContainer.\<T>
@@ -35,7 +36,7 @@ Interface for markup expressions such as `<C></C>`.
 
 **Methods:**
 
-- `IMarkupContainer_add(child:T):void`
+- `IMarkupContainer_add(child : T) : void`
 
 ## String
 
@@ -43,8 +44,8 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 **Properties:**
 
-- `length:Int`: Returns number of code points.
-- `isEmpty:Boolean`
+- `length : Int`: Returns number of code points.
+- `isEmpty : Boolean`
 
 **Proxies:**
 
@@ -275,11 +276,11 @@ Represents any type.
 
 **Methods:**
 
-- `construct(o:*, arguments:[*]):*`
-- `typeOf(type:Class):Object`
+- `construct(o : *, arguments : [*]) : *`
+- `typeOf(type : Class) : Object`
   - Returns a type meta-object describing the given type.
-- `get(o:*, k:String):*`
-- `set(o:*, k:String, v:*):Boolean`
+- `get(o : *, k : String) : *`
+- `set(o : *, k : String, v : *) : Boolean`
 
 ## "Type meta-objects"
 
@@ -287,10 +288,10 @@ Type meta-objects describe types at runtime.
 
 - Binding
   - Represents general name bindings, including variable and virtual properties and methods. Also used for decorated properties.
-  - `name:String`
-  - `type:Class`
-  - `readOnly:Boolean`
-  - `writable:Boolean`
+  - `name : String`
+  - `type : Class`
+  - `readOnly : Boolean`
+  - `writable : Boolean`
 - AnyType
 - UndefinedType
 - NullType
@@ -304,10 +305,10 @@ Type meta-objects describe types at runtime.
 - TupleType
 - RecordType
 - FunctionType
-  - `requiredParams:[Binding]?`
-  - `optParams:[Binding]?`
-  - `restParam:Binding?`
-  - `returnType:Class`
+  - `requiredParams : [Binding]?`
+  - `optParams : [Binding]?`
+  - `restParam : Binding?`
+  - `returnType : Class`
 - TypeParameter
 
 ## Temporal (namespace)
