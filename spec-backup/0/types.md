@@ -9,13 +9,13 @@ Default enums:
 ```
 enum Product {
     // ['smartphone', 0]
-    const SMARTPHONE;
+    SMARTPHONE;
 
     // ['aUtOmObIlE', 1]
-    const AUTOMOBILE = 'aUtOmObIlE';
+    AUTOMOBILE = 'aUtOmObIlE';
 
     // ['kxxx', 65]
-    const KEYBOARD = [65, 'kxxx'];
+    KEYBOARD = [65, 'kxxx'];
 
     function customMethod():void {
     }
@@ -37,13 +37,13 @@ Flags enums:
 [Flags]
 enum Permissions {
     // ['fooBlah', 1]
-    const FOO_BLAH;
+    FOO_BLAH;
 
     // ['qux', 2]
-    const QUX;
+    QUX;
 
     // ['baz', 4]
-    const BAZ;
+    BAZ;
 }
 
 var p:Permissions = ['fooBlah', 'qux'];
