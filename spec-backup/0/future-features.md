@@ -15,3 +15,7 @@ public use alias A = q.f.B;
 ```
 
 It is also worthy noting lexical aliases are already possible with `import`.
+
+## Observable Object
+
+Based on an ECMAScript proposal for Observable.
