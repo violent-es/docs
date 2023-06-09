@@ -272,6 +272,10 @@ Represents any type.
 
 ## Math (namespace)
 
+**Methods:**
+
+- [ ] `clamp(value:*, min:*, max:*):*`
+
 ## Reflect (namespace)
 
 **Methods:**
