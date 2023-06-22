@@ -304,7 +304,7 @@ Type meta-objects describe types at runtime.
 - ClassType
 - EnumType
 - InterfaceType
-- InstantiationType
+- TypeWithArguments
 - UnionType
 - TupleType
 - RecordType
