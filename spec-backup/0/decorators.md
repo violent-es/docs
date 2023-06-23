@@ -46,6 +46,7 @@ class C {
 
 The following decorators are reserved, but can still be used if they do not directly appear as lexical references:
 
+- `[Metadata()]`
 - When applied to a class, `[Value]` is reserved
 - When applied to a class, `[DontInit]` is reserved
 - When applied to an enum, `[Flags]` is reserved
