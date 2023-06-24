@@ -19,3 +19,14 @@ It is also worthy noting lexical aliases are already possible with `import`.
 ## Observable Object
 
 Based on an ECMAScript proposal for Observable.
+
+## Type Inference for Override Signatures
+
+Libraries are usually loaded and resolved before an actual project, therefore it can be useful to override a method whose signature has already been resolved without specifying its types.
+
+```
+class C extends CanvasLayer {
+    override function process(delta) {
+    }
+}
+```
