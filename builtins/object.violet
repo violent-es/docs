@@ -1,13 +1,11 @@
-package
-{
-    public class Object
-    {
-        public native function Object();
+package;
 
-        public native function get constructor():Class;
+public class Object {
+    public native function Object();
 
-        public native function toString():String;
+    public native function get constructor(): Class;
 
-        public native function valueOf():*;
-    }
+    public native function toString(): String;
+
+    public native function valueOf(): *;
 }
