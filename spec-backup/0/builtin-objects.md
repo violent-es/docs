@@ -18,15 +18,9 @@ var y = global.Infinity;
 
 ## Iterator.\<T>
 
-**Extends:** Generator.\<T>
-
-**Proxies:**
-
-- `proxy::has`: tests if value is contained in a collection
-
 **Methods:**
 
-- `next() : {done : Boolean, value : undefined|T}`
+- `next(): {done: Boolean, value: undefined | T}`
 - `toArray() : [T]`
 - Array-like functional methods such as `map()` and `some()`
 
@@ -423,7 +417,6 @@ Used by the `use resource` statement.
 Assertion functions:
 
 - `assert()`
-- `assertEquals()`
-- `assertNotEquals()`
+- `assertEqual()`
+- `assertNotEqual()`
 - `assertThrows()`
-- `assertDoesntThrow()`
