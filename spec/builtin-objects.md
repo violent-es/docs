@@ -45,7 +45,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 - Index operator: Yields single-character String or empty string if out of bounds.
 - Addition (`proxy::add(other: *): String`)
-- `for each`: Yields code point Strings.
+- Iterator: Yields code point Strings.
 
 **Methods:**
 
@@ -72,7 +72,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 - `endsWith()`
 - `codePoints(): CodePointIterator`
 - `rightToLeftCodePoints(): RightToLeftCodePointIterator`
-- `charAt(index: Int):String`
+- `charAt(index: Int): String`
 - `charCodeAt(index: Int): Int`
 - `codePointAt(index: Int): Int`
 - `slice(from: Int, to: undefined | Int = undefined): String`
@@ -85,8 +85,8 @@ CodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 
 **Properties:**
 
-- `index:Int`: Writable
-- `hasRemaining:Boolean`
+- `index: Int`: Writable
+- `hasRemaining: Boolean`
 
 **Proxies:**
 
@@ -95,18 +95,18 @@ CodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 **Methods:**
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is behind
-- `peekSequence(length:Int):String`: Length is in code points
+- `peekSequence(length: Int):String`: Length is in code points
 - `next()`: Yields code point as `Int`
-- `skipSequence(length:Int)`: Length is in code points
-- `backward(length:Int = 1)`
+- `skipSequence(length: Int)`: Length is in code points
+- `backward(length: Int = 1)`
 - `clone()`
 
 ## RightToLeftCodePointIterator
 
 RightToLeftCodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 
-- `index:Int`: Writable
-- `hasRemaining:Boolean`
+- `index: Int`: Writable
+- `hasRemaining: Boolean`
 
 **Proxies:**
 
@@ -115,10 +115,10 @@ RightToLeftCodePointIterator does not implement Iterator.\<Int> due to its `next
 **Methods:**
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is ahead
-- `peekSequence(length:Int):String`: Length is in code points, without inverting the String. For example, `'ecma'.rightToLeftChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
+- `peekSequence(length: Int): String`: Length is in code points, without inverting the String. For example, `'ecma'.rightToLeftChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
 - `next()`: Yields code point as `Int`
-- `skipSequence(length:Int)`: Length is in code points
-- `forward(length:Int = 1)`
+- `skipSequence(length: Int)`: Length is in code points
+- `forward(length: Int = 1)`
 - `clone()`
 
 ## Function
@@ -135,23 +135,23 @@ Basically used for untyped functions, but also a super type of structural functi
 
 **Properties:**
 
-- `first:undefined|T`
-- `last:undefined|T`
-- `length:Int`
+- `first: undefined | T`
+- `last: undefined | T`
+- `length: Int`
 
 **Proxies:**
 
 - Indexing (including `delete`)
 - `in` operator (determines if the `Array` includes a value)
-- `for each`
+- Iterator
 
 **Methods:**
 
 - `reverse()` - mutates existing `Array`
 - `equals(anotherArray)`
 - `deepEquals(anotherArray)`
-- `insertAt(pos ,v):void`
-- `removeAt(pos):undefined|T`
+- `insertAt(pos, v): void`
+- `removeAt(pos): undefined | T`
 - Several other methods in EcmaScript
 
 ## Stack.\<T>
@@ -169,10 +169,10 @@ Basically used for untyped functions, but also a super type of structural functi
 
 **Methods:**
 
-- `peek():undefined|T`
+- `peek(): undefined | T`
 - `push()`
 - `pop()`
-- `values():Iterator.<T>`
+- `values(): Iterator.<T>`
 
 ## Queue.\<T>
 
@@ -186,13 +186,13 @@ Basically used for untyped functions, but also a super type of structural functi
 **Properties:**
 
 - `length`
-- `values():Iterator.<T>`
+- `values(): Iterator.<T>`
 
 **Methods:**
 
-- `peek():undefined|T`
-- `enqueue(v:T)`: Adds value to the end of the queue
-- `dequeue():undefined|T`: Removes and returns the value at the beginning of the queue, or returns `undefined` if empty
+- `peek(): undefined | T`
+- `enqueue(v: T)`: Adds value to the end of the queue
+- `dequeue(): undefined | T`: Removes and returns the value at the beginning of the queue, or returns `undefined` if empty
 
 ## Map.\<K, V>
 
@@ -203,15 +203,20 @@ Items are ordered by insertion.
 **Constructor:**
 
 - `new Map`
-- `new Map(entries:[K, V])`
+- `new Map(entries: [K, V])`
 - `new Map(anotherMap)`: Clones another Map object.
+
+**Proxies:**
+
+- Iterator (yields `[K, V]`)
+- `in`
 
 **Properties:**
 
 - `length`
-- `entries():Iterator.<[K,V]>`
-- `keys():Iterator.<K>`
-- `values():Iterator.<V>`
+- `entries(): Iterator.<[K, V]>`
+- `keys(): Iterator.<K>`
+- `values(): Iterator.<V>`
 
 ## WeakMap.\<K, V>
 
@@ -227,7 +232,7 @@ Items are ordered by insertion.
 
 **Proxies:**
 
-- `for each`
+- Iterator
 - `in`
 
 **Properties:**
@@ -236,9 +241,9 @@ Items are ordered by insertion.
 
 **Methods:**
 
-- `add(v:T):void`
-- `delete(v:T):Boolean`
-- `values():Iterator.<T>`
+- `add(v: T): void`
+- `delete(v: T): Boolean`
+- `values(): Iterator.<T>`
 
 ## WeakSet.\<T>
 
@@ -331,49 +336,49 @@ Based on https://tc39.es/proposal-temporal/docs.
 
 **Methods:**
 
-- `static range(start, end, step?):Iterator.<Number>`
+- `static range(start, end, step?): Iterator.<Number>`
 
 ## Decimal
 
 **Methods:**
 
-- `static range(start, end, step?):Iterator.<Decimal>`
+- `static range(start, end, step?): Iterator.<Decimal>`
 
 ## Byte
 
 **Methods:**
 
-- `static range(start, end, step?):Iterator.<Byte>`
+- `static range(start, end, step?): Iterator.<Byte>`
 
 ## Short
 
 **Methods:**
 
-- `static range(start, end, step?):Iterator.<Short>`
+- `static range(start, end, step?): Iterator.<Short>`
 
 ## Int
 
 **Methods:**
 
-- `static range(start, end, step?):Iterator.<Int>`
+- `static range(start, end, step?): Iterator.<Int>`
 
 ## Long
 
 **Methods:**
 
-- `static range(start, end, step?):Iterator.<Long>`
+- `static range(start, end, step?): Iterator.<Long>`
 
 ## BigInt
 
 **Methods:**
 
-- `static range(start, end, step?):Iterator.<BigInt>`
+- `static range(start, end, step?): Iterator.<BigInt>`
 
 ## Object
 
 **Properties:**
 
-- `constructor:Class`: read-only reference to the constructor type of an object.
+- `constructor: Class`: read-only reference to the constructor type of an object.
 
 ## RegExp
 
@@ -392,7 +397,7 @@ Used by the `use resource` statement.
 
 **Methods:**
 
-- `dispose():void`
+- `dispose(): void`
 
 ## trace()
 
