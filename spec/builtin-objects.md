@@ -175,7 +175,6 @@ Basically used for untyped functions, but also a super type of structural functi
 - `peek(): undefined | T`
 - `push()`
 - `pop()`
-- `values(): Iterator.<T>`
 
 ## Queue.\<T>
 
@@ -189,7 +188,6 @@ Basically used for untyped functions, but also a super type of structural functi
 **Properties:**
 
 - `length`
-- `values(): Iterator.<T>`
 
 **Methods:**
 
@@ -214,10 +212,16 @@ Items are ordered by insertion.
 
 - Iterator (yields `[K, V]`)
 - `in`
+- Get index
+- Set index
+- Delete index
 
 **Properties:**
 
 - `length`
+
+**Methods:**
+
 - `entries(): Iterator.<[K, V]>`
 - `keys(): Iterator.<K>`
 - `values(): Iterator.<V>`
@@ -227,7 +231,7 @@ Items are ordered by insertion.
 
 (Final.)
 
-Similiar to Map, but with weak key references.
+Similiar to Map, but with weak key references.  Constructor too.
 
 ## Set.\<T>
 
@@ -261,7 +265,7 @@ Items are ordered by insertion.
 
 (Final.)
 
-Similiar to Set.
+Similiar to Set. Constructor too.
 
 ## Promise.\<T>
 
