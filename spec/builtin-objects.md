@@ -1,5 +1,7 @@
 # Built-in Objects
 
+This list of built-ins is incomplete. It doesn't document many of the JavaScript standard built-ins, but the language will implement most of them.
+
 ## global
 
 This is a property that refers to the global package.
@@ -98,7 +100,7 @@ CodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 - `peekSequence(length: Int):String`: Length is in code points
 - `next()`: Yields code point as `Int`
 - `skipSequence(length: Int)`: Length is in code points
-- `backward(length: Int = 1)`
+- `moveBackward(length: Int = 1)`
 - `clone()`
 
 ## RightToLeftCodePointIterator
@@ -118,7 +120,7 @@ RightToLeftCodePointIterator does not implement Iterator.\<Int> due to its `next
 - `peekSequence(length: Int): String`: Length is in code points, without inverting the String. For example, `'ecma'.rightToLeftChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
 - `next()`: Yields code point as `Int`
 - `skipSequence(length: Int)`: Length is in code points
-- `forward(length: Int = 1)`
+- `moveForward(length: Int = 1)`
 - `clone()`
 
 ## Function
@@ -148,6 +150,7 @@ Basically used for untyped functions, but also a super type of structural functi
 **Methods:**
 
 - `reverse()` - mutates existing `Array`
+- `forEach(fn)`
 - `equals(anotherArray)`
 - `deepEquals(anotherArray)`
 - `insertAt(pos, v): void`
@@ -205,6 +208,7 @@ Items are ordered by insertion.
 - `new Map`
 - `new Map(entries: [K, V])`
 - `new Map(anotherMap)`: Clones another Map object.
+- `new Map(anotherWeakMap)`
 
 **Proxies:**
 
@@ -217,6 +221,7 @@ Items are ordered by insertion.
 - `entries(): Iterator.<[K, V]>`
 - `keys(): Iterator.<K>`
 - `values(): Iterator.<V>`
+- `forEach(fn)`
 
 ## WeakMap.\<K, V>
 
@@ -229,6 +234,13 @@ Similiar to Map, but with weak key references.
 (Final.)
 
 Items are ordered by insertion.
+
+**Constructor:**
+
+- `new Set`
+- `new Set(values: [V])`
+- `new Set(anotherSet)`: Clones another Set object.
+- `new Set(anotherWeakSet)`
 
 **Proxies:**
 
