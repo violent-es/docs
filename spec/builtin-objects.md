@@ -7,13 +7,13 @@ This is a property that refers to the global package.
 This can be used to refer to a package or top-level definition that starts with a lexically conflicting name. For example:
 
 ```
-var com = 10;
+const com = 10;
 global.com.qux.f();
 
 // another example
 const Infinity = 10;
-var x = Infinity;
-var y = global.Infinity;
+const x = Infinity;
+const y = global.Infinity;
 ```
 
 ## Iterator.\<T>
@@ -30,7 +30,7 @@ Interface for markup expressions such as `<C></C>`.
 
 **Methods:**
 
-- `IMarkupContainer_add(child : T) : void`
+- `IMarkupContainer_add(child: T): void`
 
 ## String
 
@@ -38,46 +38,46 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 **Properties:**
 
-- `length : Int`: Returns number of code points.
-- `isEmpty : Boolean`
+- `length: Int`: Returns number of code points.
+- `isEmpty: Boolean`
 
 **Proxies:**
 
 - Index operator: Yields single-character String or empty string if out of bounds.
-- Addition (`proxy::add(other:*):String`)
+- Addition (`proxy::add(other: *): String`)
 - `for each`: Yields code point Strings.
 
 **Methods:**
 
-- `static fromCharCode(...):String`
-- `static fromCodePoint(...):String`
-- `apply(arguments:Map.<String, *>|[*]):String`: Formats arguments.
+- `static fromCharCode(...): String`
+- `static fromCodePoint(...): String`
+- `apply(arguments: Map.<String, *> | [*]): String`: Formats arguments.
   - `'$a $$'.apply({ a: 10 })`
   - `'$1 $2'.apply(['one', 'two'])`
-  - `'$<IE_bar>'.apply(...)` allows name with hyphen and underscore
+  - `'$<hyphens-n_Underscores>'.apply(...)`
   - Internally used regular expression: `/\$([a-z0-9]+|<[a-z_\-0-9]+>|\$)/gi`
   - Futurely we can support advanced parameters with formatting options, such as:
-    - `${name=qux,x=y,z=w}`
+    - `${param=paramName,x=y,z=w}`
 - `repeat()`
 - `replace()`: Similiar to EcmaScript
 - `match()`: Similiar to EcmaScript
 - `reverse()`
 - `split()`: Accepts String and RegExp
-- `indexOf():Int`
-- `lastIndexOf():Int`
+- `indexOf(): Int`
+- `lastIndexOf(): Int`
 - `trim()`
 - `trimLeft()`
 - `trimRight()`
 - `startsWith()`
 - `endsWith()`
-- `codePoints():CodePointIterator`
-- `rightToLeftCodePoints():RightToLeftCodePointIterator`
-- `charAt(index:Int):String`
-- `charCodeAt(index:Int):Int`
-- `codePointAt(index:Int):Int`
-- `slice(from:Int, to:undefined|Int = undefined):String`
-- `substr(index:Int, length:undefined|Int = undefined):String`
-- `substring(from:Int, to:undefined|Int = undefined):String`
+- `codePoints(): CodePointIterator`
+- `rightToLeftCodePoints(): RightToLeftCodePointIterator`
+- `charAt(index: Int):String`
+- `charCodeAt(index: Int): Int`
+- `codePointAt(index: Int): Int`
+- `slice(from: Int, to: undefined | Int = undefined): String`
+- `substr(index: Int, length: undefined | Int = undefined): String`
+- `substring(from: Int, to: undefined | Int = undefined): String`
 
 ## CodePointIterator
 
@@ -158,6 +158,11 @@ Basically used for untyped functions, but also a super type of structural functi
 
 (Final.)
 
+**Proxies:**
+
+- Iterator
+- `in`
+
 **Properties:**
 
 - `length`
@@ -172,6 +177,11 @@ Basically used for untyped functions, but also a super type of structural functi
 ## Queue.\<T>
 
 (Final.)
+
+**Proxies:**
+
+- Iterator
+- `in`
 
 **Properties:**
 
