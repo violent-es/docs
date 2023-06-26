@@ -23,7 +23,6 @@ const y = global.Infinity;
 **Methods:**
 
 - `next(): {done: Boolean, value: undefined | T}`
-- `toArray() : [T]`
 - Array-like functional methods such as `map()` and `some()`
 
 ## IMarkupContainer.\<T>
