@@ -148,6 +148,7 @@ Basically used for untyped functions, but also a super type of structural functi
 
 **Methods:**
 
+- Static `from(iterator)`
 - `reverse()` - mutates existing `Array`
 - `forEach(fn)`
 - `equals(anotherArray)`
