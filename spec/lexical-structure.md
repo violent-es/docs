@@ -121,7 +121,6 @@ Reserved words:
 - `switch`
 - `this`
 - `throw`
-- `throws`
 - `try`
 - `typeof`
 - `use`

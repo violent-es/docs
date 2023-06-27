@@ -4,7 +4,6 @@ Uncategorized:
 
 - Optional parameters
 - Rest parameter
-- `throws` clause (no need for union vertical line or parentheses when specifying multiple types)
 - `where` clause for generic functions
 
 Getters/setters:
