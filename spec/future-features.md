@@ -30,3 +30,9 @@ class C extends CanvasLayer {
     }
 }
 ```
+
+## Script-Level Allows and Warnings
+
+There is no need so far, but if needed in the future, a script can specify an allow or warn using a top string literal (like `'allow ...'`). In this case they've to be syntatically consumed before packages (including the optional semicolon).
+
+This would use a stack too, for allowing `include`d scripts to alter it for theirselves.
