@@ -44,7 +44,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 **Proxies:**
 
-- Index operator: Yields single-character String or empty string if out of bounds.
+- Index operator: Yields single Code Point character string or empty string if out of bounds.
 - Addition (`proxy::add(other: *): String`)
 - Iterator: Yields code point Strings.
 
