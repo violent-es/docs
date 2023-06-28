@@ -2,7 +2,7 @@
 
 - Embed: `embed './data.bin':ByteArray` and `embed './data.txt':String`
 - Await (`await givenPromise`, implicitly causes surrounding function to be asynchronous and return a `Promise`)
-- Await can be used in the top-level program.
+- Await is not allowed in the top-level.
 - Yield (`yield v`, implictily causes surrounding function to be a generator and return a `Generator`)
 - Default: `default(T)` returns default value of type `T`
 - `import.meta` returns information about a script file; returns `{url: fileURL}`.
