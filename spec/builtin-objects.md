@@ -352,43 +352,43 @@ Based on https://tc39.es/proposal-temporal/docs.
 
 **Methods:**
 
-- `static range(start, end, step?): Iterator.<Number>`
+- `static range(start, end, step?): Generator.<Number>`
 
 ## Decimal
 
 **Methods:**
 
-- `static range(start, end, step?): Iterator.<Decimal>`
+- `static range(start, end, step?): Generator.<Decimal>`
 
 ## Byte
 
 **Methods:**
 
-- `static range(start, end, step?): Iterator.<Byte>`
+- `static range(start, end, step?): Generator.<Byte>`
 
 ## Short
 
 **Methods:**
 
-- `static range(start, end, step?): Iterator.<Short>`
+- `static range(start, end, step?): Generator.<Short>`
 
 ## Int
 
 **Methods:**
 
-- `static range(start, end, step?): Iterator.<Int>`
+- `static range(start, end, step?): Generator.<Int>`
 
 ## Long
 
 **Methods:**
 
-- `static range(start, end, step?): Iterator.<Long>`
+- `static range(start, end, step?): Generator.<Long>`
 
 ## BigInt
 
 **Methods:**
 
-- `static range(start, end, step?): Iterator.<BigInt>`
+- `static range(start, end, step?): Generator.<BigInt>`
 
 ## Object
 
