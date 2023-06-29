@@ -1,9 +1,9 @@
 # Package Manager
 
-The package manager will fetch dependencies from the entry point by collecting all related `include` directives (that do not start with `.`):
+As usual, dependencies will be expressed into a configuration file.
+
+`include`s without initial dot are reserved as they may be used in the future.
 
 ```
-include 'com.framework.core@0.1.0';
+include 'com.library@0.1.0';
 ```
-
-This will then allow all scripts in the project to use public definitions from a library and `import` them.
