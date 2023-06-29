@@ -1,5 +1,11 @@
 # Future Features
 
+## Is Not
+
+```
+v is not T
+```
+
 ## Alias
 
 The following `use alias` definition should not be needed at all, because the user can already alias types and namespaces with the context words `type` and `namespace`. The following `use alias` should only be useful for aliasing functions and variables.

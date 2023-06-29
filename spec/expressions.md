@@ -55,7 +55,7 @@
 - `E(numOrStr)`, where E is an enum type, is equivalent to `numOrStr as! E`
 - `N(num)`, where N is a numeric type and `num` is a value of a numeric type, is equivalent to `num as! N`
 - `Id`
-- `Id:T`
+- `Id: T`
 - `/zxc/i` (`RegExp literal`)
 - `this` (this literal)
 - `'string'` (string literal)
@@ -67,7 +67,7 @@
 - `v as! T` (strict type conversion)
 - `v instanceof T`
 - `v is T`
-- `o1 is o2:T` (binds `o2` into a new frame)
+- `o1 is o2: T` (binds `o2` into a new frame)
 - `(v)` (parentheses expression)
 - `x, y` (list expression)
 - `tOrFunction.<...>` (generic instantiation)
@@ -78,6 +78,8 @@
 - `+v`
 - `-v`
 - `~v`
+- `v in o`
+- `v not in o`
 - `x + y`
 - `x - y`
 - `x * y`

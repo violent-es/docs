@@ -112,6 +112,7 @@ Reserved words:
 - `internal`
 - `is`
 - `new`
+- `not`
 - `package`
 - `private`
 - `protected`
