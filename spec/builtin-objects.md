@@ -72,13 +72,13 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 - `startsWith()`
 - `endsWith()`
 - `codePoints(): CodePointIterator`
-- `rightToLeftCodePoints(): RightToLeftCodePointIterator`
+- `rightCodePoints(): RightCodePointIterator`
 - `charAt(index: Int): String`
 - `charCodeAt(index: Int): Int`
 - `codePointAt(index: Int): Int`
-- `slice(from: Int, to: undefined | Int = undefined): String`
-- `substr(index: Int, length: undefined | Int = undefined): String`
-- `substring(from: Int, to: undefined | Int = undefined): String`
+- `slice(from: Int, to?: Int?): String`
+- `substr(index: Int, length?: Int?): String`
+- `substring(from: Int, to?: Int?): String`
 
 ## CodePointIterator
 
@@ -102,21 +102,21 @@ CodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 - `moveBackward(length: Int = 1)`
 - `clone()`
 
-## RightToLeftCodePointIterator
+## RightCodePointIterator
 
-RightToLeftCodePointIterator does not implement Iterator.\<Int> due to its `next` method.
+RightCodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 
 - `index: Int`: Writable
 - `hasRemaining: Boolean`
 
 **Proxies:**
 
-- Indexing (`s.rightToLeftChars[i]`): Equivalent to `s.peek(i)`
+- Indexing (`s.RightChars[i]`): Equivalent to `s.peek(i)`
 
 **Methods:**
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is ahead
-- `peekSequence(length: Int): String`: Length is in code points, without inverting the String. For example, `'ecma'.rightToLeftChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
+- `peekSequence(length: Int): String`: Length is in code points, without inverting the String. For example, `'ecma'.RightChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
 - `next()`: Yields code point as `Int`
 - `skipSequence(length: Int)`: Length is in code points
 - `moveForward(length: Int = 1)`
