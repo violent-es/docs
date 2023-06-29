@@ -2,6 +2,8 @@
 
 This list of built-ins is incomplete. It doesn't document many of the JavaScript standard built-ins, but the language will implement most of them.
 
+Also, this list will be soon replaced by the standard objects sources used by the compiler.
+
 ## global
 
 This is a property that refers to the global package.
