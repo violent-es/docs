@@ -82,7 +82,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 ## CodePointIterator
 
-CodePointIterator does not implement Iterator.\<Int> due to its `next` method.
+**Implements:** Iterator.\<Int>
 
 **Properties:**
 
@@ -97,14 +97,15 @@ CodePointIterator does not implement Iterator.\<Int> due to its `next` method.
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is behind
 - `peekSequence(length: Int):String`: Length is in code points
-- `next()`: Yields code point as `Int`
 - `skipSequence(length: Int)`: Length is in code points
 - `moveBackward(length: Int = 1)`
 - `clone()`
 
 ## RightCodePointIterator
 
-RightCodePointIterator does not implement Iterator.\<Int> due to its `next` method.
+**Implements:** Iterator.\<Int>
+
+**Properties:**
 
 - `index: Int`: Writable
 - `hasRemaining: Boolean`
@@ -117,7 +118,6 @@ RightCodePointIterator does not implement Iterator.\<Int> due to its `next` meth
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is ahead
 - `peekSequence(length: Int): String`: Length is in code points, without inverting the String. For example, `'ecma'.RightChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
-- `next()`: Yields code point as `Int`
 - `skipSequence(length: Int)`: Length is in code points
 - `moveForward(length: Int = 1)`
 - `clone()`
