@@ -96,9 +96,9 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 **Methods:**
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is behind
-- `peekSequence(length: Int):String`: Length is in code points
-- `skipSequence(length: Int)`: Length is in code points
-- `moveBackward(length: Int = 1)`
+- `peekSeq(length: Int):String`: Length is in code points
+- `skip(length: Int)`: Length is in code points
+- `backward(length: Int = 1)`
 - `clone()`
 
 ## RightCodePointIterator
@@ -117,9 +117,8 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 **Methods:**
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is ahead
-- `peekSequence(length: Int): String`: Length is in code points, without inverting the String. For example, `'ecma'.RightChars.peekSequence(4)` equals `'ecma'`, not `'amce'`.
-- `skipSequence(length: Int)`: Length is in code points
-- `moveForward(length: Int = 1)`
+- `peekSeq(length: Int): String`: Length is in code points, without inverting the String. For example, `'ecma'.rightCodePoints().peekSequence(4)` equals `'ecma'`, not `'amce'`.
+- `skip(length: Int)`: Length is in code points
 - `clone()`
 
 ## Function
