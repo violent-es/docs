@@ -97,6 +97,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is behind
 - `peekSeq(length: Int):String`: Length is in code points
+- `nextCodePoint(): Int`: If end reached, returns zero.
 - `skip(length: Int)`: Length is in code points
 - `backward(length: Int = 1)`
 - `clone()`
@@ -118,6 +119,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 - `peek(relativeIndex = 0)`: Relative index is given in code points; if negative, relative index is ahead
 - `peekSeq(length: Int): String`: Length is in code points, without inverting the String. For example, `'ecma'.rightCodePoints().peekSequence(4)` equals `'ecma'`, not `'amce'`.
+- `nextCodePoint(): Int`: If end reached, returns zero.
 - `skip(length: Int)`: Length is in code points
 - `clone()`
 
