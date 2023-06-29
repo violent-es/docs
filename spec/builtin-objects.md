@@ -88,6 +88,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 - `index: Int`: Writable
 - `hasRemaining: Boolean`
+- `isEmpty: Boolean`
 
 **Proxies:**
 
@@ -110,6 +111,7 @@ The String data type is UTF-16 encoded for compatibility with the ECMA-262 Strin
 
 - `index: Int`: Writable
 - `hasRemaining: Boolean`
+- `isEmpty: Boolean`
 
 **Proxies:**
 
