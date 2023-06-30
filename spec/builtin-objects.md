@@ -304,17 +304,17 @@ Represents any type.
 
 **Methods:**
 
-- [ ] `clamp(value:*, min:*, max:*):*`
+- [ ] `clamp(value: *, min: *, max: *): *`
 
 ## Reflect (namespace)
 
 **Methods:**
 
-- `construct(o : *, arguments : [*]) : *`
-- `typeOf(type : Class) : Object`
+- `construct(o: *, arguments: [*]): *`
+- `describeType(type: Class): Object`
   - Returns a type meta-object describing the given type.
-- `get(o : *, k : String) : *`
-- `set(o : *, k : String, v : *) : Boolean`
+- `get(o: *, k: String): *`
+- `set(o: *, k: String, v: *): Boolean`
 
 ## "Type meta-objects"
 
@@ -322,10 +322,10 @@ Type meta-objects describe types at runtime.
 
 - Binding
   - Represents general name bindings, including variable and virtual properties and methods. Also used for decorated properties.
-  - `name : String`
-  - `type : Class`
-  - `readOnly : Boolean`
-  - `writable : Boolean`
+  - `name: String`
+  - `type: Class`
+  - `readOnly: Boolean`
+  - `writable: Boolean`
 - AnyType
 - UndefinedType
 - NullType
@@ -339,10 +339,10 @@ Type meta-objects describe types at runtime.
 - TupleType
 - RecordType
 - FunctionType
-  - `requiredParams : [Binding]?`
-  - `optParams : [Binding]?`
-  - `restParam : Binding?`
-  - `returnType : Class`
+  - `requiredParams: [Binding]?`
+  - `optParams: [Binding]?`
+  - `restParam: Binding?`
+  - `returnType: Class`
 - TypeParameter
 
 ## Temporal (namespace)
