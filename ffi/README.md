@@ -1,8 +1,8 @@
 # FFI
 
-## Writing Basic Base Class
+## Writing Native Class
 
-A native class that is not marked `final` should specify the count of bytes for its internal fields. This count of bytes:
+A native class _**must**_ specify the count of bytes for its internal fields. This count of bytes:
 
 - _doesn't_ include internal fields from supertypes and
 - _doesn't_ include internal fields from subtypes.
@@ -32,3 +32,5 @@ public class C1 {
 ```
 
 since `fields` is an unsigned 64-bit integer.
+
+> _**WARNING:**_ unless the VioletScript source is automatically generated (also known as _bindgen_ (bindings generation)), it is not recommended to use pointers or types whose size is not clear as internal fields.
