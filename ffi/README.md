@@ -1,4 +1,4 @@
-# Native
+# FFI
 
 ## Writing Basic Base Class
 
@@ -19,6 +19,7 @@ struct C1 {
 
 where:
 
+- `#[repr(C)]` specifies the memory layout used by the C language (important),
 - `constructor` is a property defined internally by `Object`. It's a pointer to a `Box`.
 - `fields` is a pointer to `C1`'s fields (usually a `Box`).
 
