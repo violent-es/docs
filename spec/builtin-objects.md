@@ -33,7 +33,7 @@ Interface for markup expressions such as `<C></C>`.
 
 **Methods:**
 
-- `IMarkupContainer_add(child: T): void`
+- `addMarkupChild(child: T): void`
 
 ## String
 
